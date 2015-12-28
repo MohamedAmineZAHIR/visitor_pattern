@@ -27,5 +27,12 @@ public abstract class StorageElement
 	public abstract String absoluteAddress ();
 	public abstract String ls ();
 	public abstract void reset ();
+	
+	/**
+	 * Accept is double dispatch operation. Its meaning depends on the kind of request and the types of two receivers:
+	 * 1- The Visitor's
+	 * 2- Storage element (in this case).
+	 * @param visitor
+	 */
 	public abstract void accept(Visitor visitor);
 }
