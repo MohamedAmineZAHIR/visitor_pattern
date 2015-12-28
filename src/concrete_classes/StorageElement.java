@@ -5,13 +5,18 @@ package concrete_classes;
  * @author mzahir
  */
 
-public class StorageElement 
+public abstract class StorageElement 
 {
 	protected int basicSize;
-	protected Directory container;
+	protected StorageElement container;
 	
 	public StorageElement(int basicSize) {
 		super();
 		this.basicSize = basicSize;
 	}
+	
+	
+	public abstract int size ();
+	public abstract String absoluteAddress ();
+	public abstract String ls ();
 }

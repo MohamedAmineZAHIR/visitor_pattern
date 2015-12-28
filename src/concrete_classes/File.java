@@ -9,6 +9,24 @@ public class File extends StorageElement
 		super(0);
 	}
 	
+	@Override
+	public int size() {
+		return content.length();
+	}
+
+	@Override
+	public String absoluteAddress() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String ls() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 	// Getters/Setters
 	public String getContent() {
 		return content;
@@ -21,6 +39,5 @@ public class File extends StorageElement
 	}
 	public void setContainer(Directory container) {
 		this.container = container;
-	}
-	
+	}	
 }
