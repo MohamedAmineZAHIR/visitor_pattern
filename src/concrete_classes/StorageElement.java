@@ -15,7 +15,12 @@ public abstract class StorageElement
 		this.basicSize = basicSize;
 	}
 	
-	
+	public StorageElement(int basicSize, StorageElement container) {
+		super();
+		this.basicSize = basicSize;
+		this.container = container;
+	}
+
 	public abstract int size ();
 	public abstract String absoluteAddress ();
 	public abstract String ls ();

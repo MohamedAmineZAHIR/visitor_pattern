@@ -9,6 +9,11 @@ public class File extends StorageElement
 		super(0);
 	}
 	
+	public File(String content) {
+		super(0);
+		this.content = content;
+	}
+
 	@Override
 	public int size() {
 		return content.length();

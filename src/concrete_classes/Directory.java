@@ -5,13 +5,18 @@ import java.util.ArrayList;
 
 public class Directory extends StorageElement
 {
-	private ArrayList<StorageElement> composants;
+	private ArrayList<StorageElement> composants = new ArrayList<>();
 	
 	//  Constructor.
 	public Directory() {
 		super(4);
 	}
 	
+		
+	public Directory(StorageElement container) {
+		super(4, container);
+	}
+
 	
 	@Override
 	public int size() {
@@ -35,10 +40,13 @@ public class Directory extends StorageElement
 	
 
 	/* Getters/Setters */
-	public ArrayList<StorageElement> getDirectories() {
+	public ArrayList<StorageElement> getComposants() {
 		return composants;
 	}
-	public void setDirectories(ArrayList<StorageElement> composants) {
+	public void setComposants(ArrayList<StorageElement> composants) {
 		this.composants = composants;
+	}
+	public void setComposants(StorageElement composant) {
+		this.composants.add(composant);
 	}
 }
