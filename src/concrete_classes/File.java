@@ -1,5 +1,7 @@
 package concrete_classes;
 
+import visitor.Visitor;
+
 public class File extends StorageElement
 {
 	private String content;
@@ -15,6 +17,11 @@ public class File extends StorageElement
 	}
 
 	@Override
+	public void accept(Visitor visitor) {
+		visitor.visitFile(this);
+	}
+	
+	@Override
 	public int size() {
 		return content.length();
 	}
@@ -29,6 +36,19 @@ public class File extends StorageElement
 	public String ls() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public void reset () {
+		this.setContent("");
+	}
+	
+	public void cat () {
+		System.out.println(content);
+	}
+	
+	public int numberOfElements () {
+		return size();
 	}
 	
 	

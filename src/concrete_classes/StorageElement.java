@@ -1,5 +1,7 @@
 package concrete_classes;
 
+import visitor.Visitor;
+
 /**
  * @date   28.12.2015
  * @author mzahir
@@ -24,4 +26,6 @@ public abstract class StorageElement
 	public abstract int size ();
 	public abstract String absoluteAddress ();
 	public abstract String ls ();
+	public abstract void reset ();
+	public abstract void accept(Visitor visitor);
 }

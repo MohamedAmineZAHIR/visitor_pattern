@@ -2,6 +2,8 @@ package concrete_classes;
 
 import java.util.ArrayList;
 
+import visitor.Visitor;
+
 
 public class Directory extends StorageElement
 {
@@ -17,6 +19,10 @@ public class Directory extends StorageElement
 		super(4, container);
 	}
 
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visitDirectory(this);
+	}
 	
 	@Override
 	public int size() {
@@ -38,7 +44,21 @@ public class Directory extends StorageElement
 		return null;
 	}
 	
-
+	@Override
+	public void reset () {
+		for (StorageElement element : composants)
+			element.reset();
+	}
+	
+	/**
+	 * 
+	 * @return nombre d'éléments du premier niveau du rep.
+	 */
+	public int numberOfElements () {
+		return this.composants.size();
+	}
+	
+	
 	/* Getters/Setters */
 	public ArrayList<StorageElement> getComposants() {
 		return composants;

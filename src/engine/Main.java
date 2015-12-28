@@ -2,8 +2,10 @@ package engine;
 
 import concrete_classes.Directory;
 import concrete_classes.File;
+import visitor.CountVisitor;
 
-public class Main {
+public class Main 
+{
 
 	public static void main(String[] args) {
 		Directory racine = new Directory();
@@ -15,7 +17,13 @@ public class Main {
 		
 		racine.setComposants(directory);
 		
-		System.out.println(racine.size());
+		System.out.println("la taille de l'arborescence" + racine.size());
+		
+		CountVisitor countVisitor = new CountVisitor();
+		
+		directory.accept(countVisitor);
+		
+		System.out.println("Nombre de fichiers contenues dans le répertoire: " + countVisitor.getCounter());
 	}
 
 }
