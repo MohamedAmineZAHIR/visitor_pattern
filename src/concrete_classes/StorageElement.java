@@ -13,6 +13,7 @@ public abstract class StorageElement
 	protected String name;
 	protected StorageElement parent;
 	
+	//  Constructors.
 	public StorageElement(int basicSize) {
 		super();
 		this.basicSize = basicSize;
@@ -31,6 +32,8 @@ public abstract class StorageElement
 		this.parent = parent;
 	}
 
+	
+	//  Methods.
 	public abstract int size ();
 	public abstract String absoluteAddress ();
 	public abstract String ls ();
@@ -43,4 +46,10 @@ public abstract class StorageElement
 	 * @param visitor
 	 */
 	public abstract void accept(Visitor visitor);
+
+	
+	//  Getters/Setters
+	public String getName() {
+		return this.name;
+	}
 }

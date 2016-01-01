@@ -18,10 +18,10 @@ public class File extends StorageElement
 	public File(String name, StorageElement parent, String content) {
 		super(0, name, parent);
 		this.content = content;
-		// TODO Auto-generated constructor stub
 	}
 
 	
+
 	//  Methods.
 	@Override
 	public void accept(Visitor visitor) {

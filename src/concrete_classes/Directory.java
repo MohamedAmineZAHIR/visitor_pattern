@@ -14,37 +14,26 @@ public class Directory extends StorageElement
 		super(4);
 		this.parent = null;
 	}
+	
 	public Directory(String name) {
 		super(4);
 		this.name = name;
 		this.parent = null;
 	}
-	
 		
-	public Directory(StorageElement container) {
-		super(4, container);
+	public Directory(StorageElement parent) {
+		super(4, parent);
 	}
-
-	
-	public Directory(int basicSize, StorageElement container) {
-		super(basicSize, container);
-		// TODO Auto-generated constructor stub
-	}
-
 
 	public Directory(String name, StorageElement parent) {
 		super(4, name, parent);
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Directory(int basicSize) {
-		super(basicSize);
-		// TODO Auto-generated constructor stub
-	}
-
-
-	//========================================
+	
+	
+	/* Methods. 
+	========================================*/
 	@Override
 	public void accept(Visitor visitor) {
 		visitor.visitDirectory(this);
