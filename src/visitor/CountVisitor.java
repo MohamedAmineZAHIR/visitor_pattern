@@ -10,8 +10,8 @@ public class CountVisitor extends Visitor
 	private int counter=0;
 	
 	@Override
-	public void visitDirectory(StorageElement e) {
-		for (StorageElement element : ((Directory)e).getComposants()) {
+	public void visitDirectory(StorageElement se) {
+		for (StorageElement element : ((Directory)se).getComposants()) {
 			if (element instanceof File)
 				visitFile(element);
 			else 
@@ -22,6 +22,7 @@ public class CountVisitor extends Visitor
 
 	@Override
 	public void visitFile(StorageElement e) {
+		//  Les fichiers dont la taille est sup ou égale à 10 carac sont prises en compte.
 		counter += (((File) e).size() >= 10) ? 1 : 0;
 	}
 

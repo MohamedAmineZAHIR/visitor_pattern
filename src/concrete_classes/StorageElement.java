@@ -10,17 +10,25 @@ import visitor.Visitor;
 public abstract class StorageElement 
 {
 	protected int basicSize;
-	protected StorageElement container;
+	protected String name;
+	protected StorageElement parent;
 	
 	public StorageElement(int basicSize) {
 		super();
 		this.basicSize = basicSize;
 	}
 	
-	public StorageElement(int basicSize, StorageElement container) {
+	public StorageElement(int basicSize, StorageElement parent) {
 		super();
 		this.basicSize = basicSize;
-		this.container = container;
+		this.parent = parent;
+	}
+	
+	public StorageElement(int basicSize, String name, StorageElement parent) {
+		super();
+		this.basicSize = basicSize;
+		this.name = name;
+		this.parent = parent;
 	}
 
 	public abstract int size ();

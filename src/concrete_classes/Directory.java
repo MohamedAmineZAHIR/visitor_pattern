@@ -12,6 +12,12 @@ public class Directory extends StorageElement
 	//  Constructor.
 	public Directory() {
 		super(4);
+		this.parent = null;
+	}
+	public Directory(String name) {
+		super(4);
+		this.name = name;
+		this.parent = null;
 	}
 	
 		
@@ -19,10 +25,31 @@ public class Directory extends StorageElement
 		super(4, container);
 	}
 
+	
+	public Directory(int basicSize, StorageElement container) {
+		super(basicSize, container);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Directory(String name, StorageElement parent) {
+		super(4, name, parent);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Directory(int basicSize) {
+		super(basicSize);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	//========================================
 	@Override
 	public void accept(Visitor visitor) {
 		visitor.visitDirectory(this);
 	}
+    //========================================
 	
 	@Override
 	public int size() {
@@ -34,8 +61,7 @@ public class Directory extends StorageElement
 
 	@Override
 	public String absoluteAddress() {
-		// TODO Auto-generated method stub
-		return null;
+		return ((this.name != "/") ? this.parent.absoluteAddress()+ this.name + "/": this.name);
 	}
 
 	@Override
